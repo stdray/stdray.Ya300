@@ -1,6 +1,4 @@
-﻿
-
-namespace stdray.Ya300.Tests;
+﻿namespace stdray.Ya300.Tests;
 
 public class Ya300ClientTests : BaseTests
 {

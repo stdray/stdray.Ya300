@@ -1,5 +1,3 @@
-
-
 namespace stdray.Ya300.Tests;
 
 public class Ya300ParserTests : BaseTests

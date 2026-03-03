@@ -4,7 +4,7 @@ namespace stdray.Ya300.Tests;
 
 public class BaseTests : IDisposable
 {
-    IServiceScope Scope { get; }  = TestHost.CreateScope();
+    IServiceScope Scope { get; } = TestHost.CreateScope();
 
     protected T Resolve<T>() where T : notnull => Scope.ServiceProvider.GetRequiredService<T>();
 

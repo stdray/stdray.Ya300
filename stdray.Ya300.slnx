@@ -1,4 +1,4 @@
 <Solution>
-  <Project Path="stdray.Ya300.Tests/stdray.Ya300.Tests.csproj" />
-  <Project Path="stdray.Ya300/stdray.Ya300.csproj" />
+    <Project Path="stdray.Ya300.Tests/stdray.Ya300.Tests.csproj"/>
+    <Project Path="stdray.Ya300/stdray.Ya300.csproj"/>
 </Solution>

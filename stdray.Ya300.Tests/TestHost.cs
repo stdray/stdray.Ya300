@@ -13,10 +13,7 @@ public class TestHost
     static IHost BuildHost(string[] args)
     {
         return Microsoft.Extensions.Hosting.Host.CreateDefaultBuilder(args)
-            .ConfigureAppConfiguration((_, config) =>
-            {
-                config.AddUserSecrets<TestHost>();
-            })
+            .ConfigureAppConfiguration((_, config) => { config.AddUserSecrets<TestHost>(); })
             .ConfigureServices((host, services) =>
             {
                 var cfg = host.Configuration;
@@ -27,5 +24,4 @@ public class TestHost
             })
             .Build();
     }
-
 }
