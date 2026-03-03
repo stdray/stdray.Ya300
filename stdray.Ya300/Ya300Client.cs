@@ -23,14 +23,10 @@ public class Ya300Client(
             Content = new StringContent(json, Encoding.UTF8, "application/json")
         };
         message.Headers.Authorization = _authHeader;
-        logger.LogWarning("Token {Token}", settings.Value.Token);
         var response = await http.SendAsync(message);
-        if (!response.IsSuccessStatusCode)
-        {
-            logger.LogError("Ya300 error: {ResponseStatusCode}", response.StatusCode);
-            return null;
-        }
-
-        return await response.Content.ReadFromJsonAsync<Ya300ClientResponse>();
+        if (response.IsSuccessStatusCode)
+            return await response.Content.ReadFromJsonAsync<Ya300ClientResponse>();
+        logger.LogError("Ya300 error: {ResponseStatusCode}", response.StatusCode);
+        return null;
     }
 }
