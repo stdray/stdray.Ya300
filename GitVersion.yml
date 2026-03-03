@@ -1,0 +1,35 @@
+mode: ContinuousDelivery
+branches:
+  main:
+    regex: ^master$|^main$
+    mode: ContinuousDelivery
+    label: ""
+    increment: Patch
+  develop:
+    regex: ^dev(elop)?(ment)?$
+    mode: ContinuousDelivery
+    label: 'alpha'
+    increment: Minor
+  feature:
+    regex: ^features?[/-]
+    mode: ContinuousDelivery
+    label: 'beta'
+  pull-request:
+    regex: ^(pull|pull-requests|pr)[/-]
+    mode: ContinuousDelivery
+    label: 'pr'
+  hotfix:
+    regex: ^hotfix[/-]
+    mode: ContinuousDelivery
+    label: 'beta'
+    increment: Patch
+  release:
+    regex: ^releases?[/-]
+    mode: ContinuousDelivery
+    label: 'rc'
+    increment: Patch
+  support:
+    regex: ^support[/-]
+    mode: ContinuousDelivery
+    label: ""
+    increment: Patch
