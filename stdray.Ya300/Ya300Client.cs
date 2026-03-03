@@ -12,7 +12,7 @@ public class Ya300Client(
     IOptionsSnapshot<Ya300ClientSettings> settings,
     HttpClient http)
 {
-    readonly AuthenticationHeaderValue _authHeader = new("OAuth", settings.Value.Token);
+    readonly AuthenticationHeaderValue _authHeader = new("OAuth", settings.Value.Token.Trim());
 
     public async Task<Ya300ClientResponse?> GetSummaryLink(Uri articleUrl)
     {
