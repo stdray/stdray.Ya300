@@ -1,4 +1,4 @@
-﻿using FluentAssertions;
+﻿
 
 namespace stdray.Ya300.Tests;
 
@@ -11,7 +11,7 @@ public class Ya300ClientTests : BaseTests
         var uri = new Uri(url);
         var client = Resolve<Ya300Client>();
         var resp = await client.GetSummaryLink(uri);
-        resp.Should().NotBeNull();
-        resp.SharingUrl.Should().Be(expected);
+        Assert.NotNull(resp);
+        Assert.Equal(expected, resp.SharingUrl);
     }
 }

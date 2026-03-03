@@ -1,4 +1,4 @@
-using FluentAssertions;
+
 
 namespace stdray.Ya300.Tests;
 
@@ -10,10 +10,10 @@ public class Ya300ParserTests : BaseTests
         var html = ReadText(path);
         var parser = Resolve<Ya300Parser>();
         var result = parser.Parse(html);
-        result.Should().NotBeNull();
-        result.Title.Should().Contain(title);
-        result.ShortThesis.Should().Contain(shortThesis);
-        result.LongThesis.Should().Contain(longThesis);
+        Assert.NotNull(result);
+        Assert.Contains(title, result.Title);
+        Assert.Contains(shortThesis, result.ShortThesis);
+        Assert.Contains(longThesis, result.LongThesis);
     }
 
     public static IEnumerable<object[]> ParseResult_ShouldBeExpected_Source()
