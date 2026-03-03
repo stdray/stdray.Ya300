@@ -18,7 +18,7 @@ public class Ya300ParserTests : BaseTests
     {
         yield return
         [
-            "assets/3f0cYRBL.html",
+            "assets/3f0cYRBL.big.html",
             "«Яндекс Браузер» научили переводить с китайского язык",
             "Технология работает на YouTube и будет добавлена на Bilibili",
             "Планируется поддержка китайской видеоплатформы Bilibili"
